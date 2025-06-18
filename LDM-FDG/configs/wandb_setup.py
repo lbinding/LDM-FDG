@@ -40,7 +40,7 @@ def load_wandb_config_LDM():
         "architecture": "LDM",
         "dataset": "FDG_2D_slices",
         "epochs": 500,
-        "batch_size": 50,
+        "batch_size": 24,
         }
 
     wandb.init(

@@ -91,7 +91,7 @@ def train_LDM(LDM_model, vAE_model, inferer, scheduler, optimizer, lr_scheduler,
             # Add loss to total loss 
             total_loss += loss.item()
         
-            wandb.log({"mse_loss": loss})
+            wandb.log({"mse_loss": loss.mean().item()}) 
         #Step the learning rate scheduler
         lr_scheduler.step()
         

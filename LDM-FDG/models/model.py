@@ -4,14 +4,14 @@ from monai.bundle import ConfigParser
 import torch
 from pathlib import Path
 
-def load_KL_autoencoder(config_file="train_autoencoder.json", weights_file="base_autoencoder.pt", device=None):
+def load_KL_autoencoder(weights_path, config_file="train_autoencoder.json", device=None):
     if device is None:
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     # Setup paths
     base_dir = Path(__file__).parent.resolve().parent
     config_path = base_dir / "configs" / config_file
-    weights_path = base_dir / "models" / weights_file
+    #weights_path = base_dir / "models" / weights_file
 
     print(config_path)
 
@@ -60,14 +60,14 @@ def load_KL_autoencoder(config_file="train_autoencoder.json", weights_file="base
 
 #%%
 
-def load_LDM(config_file="train_diffusion.json", weights_file="model.pt", device=None):
+def load_LDM(weights_path, config_file="train_diffusion.json", device=None):
     if device is None:
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     # Setup paths
     base_dir = Path(__file__).parent.resolve().parent
     config_path = base_dir / "configs" / config_file
-    weights_path = base_dir / "models" / weights_file
+    #weights_path = base_dir / "models" / weights_file
 
     # Read config
     config = ConfigParser()

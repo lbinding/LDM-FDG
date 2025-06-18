@@ -18,20 +18,19 @@ hostname
 #Setup python 
 source /share/apps/source_files/python/python-3.9.5.source
 
-#Default vars:
-train_vAE = ""
-train_LDM = ""
-
-
+#Default vars
+script_name="/SAN/medic/WMH_DPM/LDM-FDG/LDM-FDG/Main.py"
+train_vAE=""
+train_LDM=""
+help_true=0
 
 # Loop over arguments looking for -i and -o
 args=("$@")
 i=0
 while [ $i -lt $# ]; do
     #Set npy data 
-    if ( [ ${args[i]} = "-script" ] ) ; then
-      let i=$i+1
-      script=${args[i]}
+    if ( [ ${args[i]} = "-help" ] ) ; then
+      help_true=1
     elif ( [ ${args[i]} = "-train_vAE" ] ) ; then
       train_vAE="--train_vAE"
     elif ( [ ${args[i]} = "-train_LDM" ] ) ; then
@@ -46,43 +45,44 @@ while [ $i -lt $# ]; do
     let i=$i+1
 done
 
-# Check if user gave correct inputs
-if [[ -z "${script}" ]]; then
-    correct_input=0
-else 
-    correct_input=1
-fi
-
-#Check the user has provided the correct inputs
-if ( [[ ${correct_input} -eq 0 ]] ) ; then
+# Print help for running the script 
+if [[ ${help_true} -eq 1 ]]; then
   echo ""
   echo "Incorrect input. Please see below for correct use"
   echo ""
   echo "Options:"
-  echo " -script:           PATH to Input script -- REQUIRED"
+  echo " -help:             Display this help message."
   echo " -train_vAE:        FLAG (sets training to True) -- OPTIONAL"
   echo " -train_LDM:        FLAG (sets training to True) -- OPTIONAL"
   echo " -vAE_model:        PATH to weights file for vAE -- OPTIONAL"
   echo " -LDM_model:        PATH to weights file for LDM -- OPTIONAL"
   echo ""
-  echo "${script_name} -script python.py"
+  echo "${script_name} -train_vAE -train_LDM -vAE_model /Path/To/Weights/File.pt -LDM_model /Path/To/Weights/File.pt"
   echo ""
-  exit
+  exit 0 
 fi
 
 # Add --vAE_model at the start of the variable vAE_model if it is set
 if [[ -n "${vAE_model}" ]]; then
-  vAE_model="--vAE_model ${vAE_model}"
-  else
-  vAE_model = ""
+    vAE_MODEL_ARGS=("--vAE_model" "${vAE_model}")
+else
+    vAE_MODEL_ARGS=()
+fi
+# Add --LDM_model at the start of the variable LDM_model if it is set
+if [[ -n "${LDM_model}" ]]; then
+    LDM_MODEL_ARGS=("--LDM_model" "${LDM_model}")
+else
+    LDM_MODEL_ARGS=()
 fi
 
-# Add --LDM_model at the start of the variable LDM_model if it is set
-if [[ -n "${lDM_model}" ]]; then
-  LDM_model="--LDM_model ${LDM_model}"
-  else
-  LDM_model = ""
-fi
+# Use an array to collect all arguments for safety.
+PYTHON_ARGS=()
+[[ -n "${train_vAE}" ]] && PYTHON_ARGS+=("${train_vAE}")
+[[ -n "${train_LDM}" ]] && PYTHON_ARGS+=("${train_LDM}")
+PYTHON_ARGS+=("${vAE_MODEL_ARGS[@]}")
+PYTHON_ARGS+=("${LDM_MODEL_ARGS[@]}")
+
 
 echo "Calling Python Script"
-python3 "${script}" ${train_vAE} ${train_LDM} "${vAE_model}" "${LDM_model}"
+echo "${script_name}  ${PYTHON_ARGS[@]}"
+python3 "${script_name}" "${PYTHON_ARGS[@]}"
