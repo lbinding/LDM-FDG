@@ -1,0 +1,24 @@
+Splitting data into training, validation, and test sets...
+Found 4014 total files.
+Training set size: 3211
+Validation set size: 401
+Test set size: 402
+/Users/lawrencebinding/miniconda3/envs/ML/lib/python3.9/site-packages/torchio/transforms/augmentation/spatial/random_elastic_deformation.py:301: RuntimeWarning: The maximum displacement is larger than the coarse grid spacing for dimensions: [2], so folding may occur. Choose fewer control points or a smaller maximum displacement
+  self.parse_free_form_transform(
+/Users/lawrencebinding/miniconda3/envs/ML/lib/python3.9/site-packages/torchio/transforms/transform.py:162: RuntimeWarning: Input image is 2D, but "2" is in axes: (0, 1, 2)
+  transformed = self.apply_transform(subject)
+Batch 1:
+Data shape: torch.Size([8, 1, 240, 240])
+Data type: torch.float32
+Device: cpu
+Plotting the first batch of data...
+Batch 2:
+Data shape: torch.Size([8, 1, 240, 240])
+Data type: torch.float32
+Device: cpu
+Plotting the first batch of data...
+Batch 3:
+Data shape: torch.Size([8, 1, 240, 240])
+Data type: torch.float32
+Device: cpu
+Plotting the first batch of data...

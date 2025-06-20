@@ -9,6 +9,7 @@ os.chdir(os.path.dirname(os.path.abspath(__file__)))
 from models.model import load_KL_autoencoder, load_LDM
 from dataset import FDG_Dataset
 from torchio_aug import Augmentations
+from monai_aug import MonaiAugmentations2D
 from KLautoencoder_losses import generator_loss, load_perceptual_loss, load_discriminator
 from train_model import train_autoencoder, train_LDM
 from configs.wandb_setup import load_wandb_config_vAE, load_wandb_config_LDM

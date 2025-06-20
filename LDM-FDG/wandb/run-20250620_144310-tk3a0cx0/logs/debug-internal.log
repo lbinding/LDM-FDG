@@ -1,0 +1,18 @@
+{"time":"2025-06-20T14:43:10.835341+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/Users/lawrencebinding/Desktop/projects/github/LDM-FDG/LDM-FDG/wandb/run-20250620_144310-tk3a0cx0/logs/debug-core.log"}
+{"time":"2025-06-20T14:43:10.845163+01:00","level":"ERROR","msg":"monitor: failed to initialize GPU asset: monitor: could not start GPU binary: fork/exec /Users/lawrencebinding/miniconda3/envs/ML/lib/python3.9/site-packages/wandb/bin/gpu_stats: bad CPU type in executable"}
+{"time":"2025-06-20T14:43:10.988547+01:00","level":"INFO","msg":"created new stream","id":"tk3a0cx0"}
+{"time":"2025-06-20T14:43:10.988585+01:00","level":"INFO","msg":"stream: started","id":"tk3a0cx0"}
+{"time":"2025-06-20T14:43:10.988608+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"tk3a0cx0"}
+{"time":"2025-06-20T14:43:10.988641+01:00","level":"INFO","msg":"sender: started","stream_id":"tk3a0cx0"}
+{"time":"2025-06-20T14:43:10.988636+01:00","level":"INFO","msg":"handler: started","stream_id":"tk3a0cx0"}
+{"time":"2025-06-20T14:43:11.227113+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-20T14:43:31.475183+01:00","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-06-20T14:43:31.521356+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-06-20T14:43:31.521417+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-06-20T14:43:32.075929+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-06-20T14:43:32.269521+01:00","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2025-06-20T14:43:32.275205+01:00","level":"INFO","msg":"stream: closing","id":"tk3a0cx0"}
+{"time":"2025-06-20T14:43:32.27523+01:00","level":"INFO","msg":"handler: closed","stream_id":"tk3a0cx0"}
+{"time":"2025-06-20T14:43:32.275245+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"tk3a0cx0"}
+{"time":"2025-06-20T14:43:32.27526+01:00","level":"INFO","msg":"sender: closed","stream_id":"tk3a0cx0"}
+{"time":"2025-06-20T14:43:32.275391+01:00","level":"INFO","msg":"stream: closed","id":"tk3a0cx0"}

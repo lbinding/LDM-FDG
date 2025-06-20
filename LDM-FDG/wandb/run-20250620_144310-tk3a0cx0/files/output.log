@@ -1,0 +1,7 @@
+Splitting data into training, validation, and test sets...
+Found 4014 total files.
+Training set size: 3211
+Validation set size: 401
+Test set size: 402
+Iterating through the train_loader...
+[34m[1mwandb[0m: [33mWARNING[0m Calling wandb.login() after wandb.init() has no effect.

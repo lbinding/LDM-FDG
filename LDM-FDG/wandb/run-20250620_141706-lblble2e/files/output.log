@@ -1,0 +1,90 @@
+Splitting data into training, validation, and test sets...
+Found 4014 total files.
+Training set size: 3211
+Validation set size: 401
+Test set size: 402
+Iterating through the train_loader...
+/Users/lawrencebinding/miniconda3/envs/ML/lib/python3.9/site-packages/torchio/transforms/augmentation/spatial/random_elastic_deformation.py:301: RuntimeWarning: The maximum displacement is larger than the coarse grid spacing for dimensions: [2], so folding may occur. Choose fewer control points or a smaller maximum displacement
+  self.parse_free_form_transform(
+/Users/lawrencebinding/miniconda3/envs/ML/lib/python3.9/site-packages/torchio/transforms/transform.py:162: RuntimeWarning: Input image is 2D, but "2" is in axes: (0, 1, 2)
+  transformed = self.apply_transform(subject)
+Batch 1:
+Data shape: torch.Size([8, 1, 240, 240])
+Data type: torch.float32
+Device: cpu
+Batch 2:
+Data shape: torch.Size([8, 1, 240, 240])
+Data type: torch.float32
+Device: cpu
+Batch 3:
+Data shape: torch.Size([8, 1, 240, 240])
+Data type: torch.float32
+Device: cpu
+Batch 4:
+Data shape: torch.Size([8, 1, 240, 240])
+Data type: torch.float32
+Device: cpu
+Batch 5:
+Data shape: torch.Size([8, 1, 240, 240])
+Data type: torch.float32
+Device: cpu
+Batch 6:
+Data shape: torch.Size([8, 1, 240, 240])
+Data type: torch.float32
+Device: cpu
+Iterating through the train_loader...
+Batch 1:
+Data shape: torch.Size([8, 1, 240, 240])
+Data type: torch.float32
+Device: cpu
+Plotting the first batch of data...
+Batch 2:
+Data shape: torch.Size([8, 1, 240, 240])
+Data type: torch.float32
+Device: cpu
+Plotting the first batch of data...
+Batch 3:
+Data shape: torch.Size([8, 1, 240, 240])
+Data type: torch.float32
+Device: cpu
+Plotting the first batch of data...
+Batch 4:
+Data shape: torch.Size([8, 1, 240, 240])
+Data type: torch.float32
+Device: cpu
+Plotting the first batch of data...
+Batch 5:
+Data shape: torch.Size([8, 1, 240, 240])
+Data type: torch.float32
+Device: cpu
+Plotting the first batch of data...
+Batch 6:
+Data shape: torch.Size([8, 1, 240, 240])
+Data type: torch.float32
+Device: cpu
+Plotting the first batch of data...
+Iterating through the train_loader...
+Batch 1:
+Batch 2:
+Batch 3:
+Batch 4:
+Batch 5:
+Batch 6:
+Batch 7:
+Batch 8:
+Batch 9:
+Batch 10:
+Batch 11:
+Batch 12:
+Batch 13:
+Batch 14:
+Batch 15:
+Batch 16:
+Batch 17:
+Batch 18:
+Batch 19:
+Batch 20:
+Batch 21:
+Batch 22:
+Batch 23:
+Batch 24:

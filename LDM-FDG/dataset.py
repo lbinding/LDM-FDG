@@ -33,7 +33,7 @@ class FDG_Dataset(Dataset):
 
         # Load the T1-weighted MRI image
         # Using memmap=False can prevent potential file locking issues
-        T1_img = nib.load(T1_path, memmap=False).get_fdata()
+        T1_img = nib.load(T1_path).get_fdata()
 
         # Wrap in Subject (Add dimensions for channels and 3D (for augmentations))
         subject = tio.Subject(image=tio.ScalarImage(tensor=torch.as_tensor(T1_img[None, :, :, None])))

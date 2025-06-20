@@ -1,0 +1,20 @@
+/Users/lawrencebinding/Desktop/projects/github/LDM-FDG/LDM-FDG/configs/train_autoencoder.json
+/Users/lawrencebinding/Desktop/projects/github/LDM-FDG/LDM-FDG/configs/train_autoencoder.json
+/Users/lawrencebinding/Desktop/projects/github/LDM-FDG/LDM-FDG/configs/train_autoencoder.json
+/Users/lawrencebinding/miniconda3/envs/ML/lib/python3.9/site-packages/torchio/transforms/augmentation/spatial/random_elastic_deformation.py:301: RuntimeWarning: The maximum displacement is larger than the coarse grid spacing for dimensions: [2], so folding may occur. Choose fewer control points or a smaller maximum displacement
+  self.parse_free_form_transform(
+/Users/lawrencebinding/Desktop/projects/github/LDM-FDG/LDM-FDG/dataset.py:35: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  image_tensor = torch.tensor(subject['image']['data'].squeeze(-1))
+/Users/lawrencebinding/miniconda3/envs/ML/lib/python3.9/site-packages/torchio/transforms/transform.py:162: RuntimeWarning: Input image is 2D, but "2" is in axes: (0, 1, 2)
+  transformed = self.apply_transform(subject)
+/Users/lawrencebinding/miniconda3/envs/ML/lib/python3.9/site-packages/torchio/transforms/augmentation/spatial/random_elastic_deformation.py:301: RuntimeWarning: The maximum displacement is larger than the coarse grid spacing for dimensions: [2], so folding may occur. Choose fewer control points or a smaller maximum displacement
+  self.parse_free_form_transform(
+/Users/lawrencebinding/Desktop/projects/github/LDM-FDG/LDM-FDG/dataset.py:35: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  image_tensor = torch.tensor(subject['image']['data'].squeeze(-1))
+/Users/lawrencebinding/Desktop/projects/github/LDM-FDG/LDM-FDG/configs/train_autoencoder.json
+/Users/lawrencebinding/miniconda3/envs/ML/lib/python3.9/site-packages/torchio/transforms/augmentation/spatial/random_elastic_deformation.py:301: RuntimeWarning: The maximum displacement is larger than the coarse grid spacing for dimensions: [2], so folding may occur. Choose fewer control points or a smaller maximum displacement
+  self.parse_free_form_transform(
+/Users/lawrencebinding/Desktop/projects/github/LDM-FDG/LDM-FDG/dataset.py:35: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  image_tensor = torch.tensor(subject['image']['data'].squeeze(-1))
+/Users/lawrencebinding/miniconda3/envs/ML/lib/python3.9/site-packages/torchio/transforms/transform.py:162: RuntimeWarning: Input image is 2D, but "2" is in axes: (0, 1, 2)
+  transformed = self.apply_transform(subject)

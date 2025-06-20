@@ -1,0 +1,20 @@
+{"time":"2025-06-20T14:30:16.834838+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/Users/lawrencebinding/Desktop/projects/github/LDM-FDG/LDM-FDG/wandb/run-20250620_143016-1uvmj4pi/logs/debug-core.log"}
+{"time":"2025-06-20T14:30:16.855529+01:00","level":"ERROR","msg":"monitor: failed to initialize GPU asset: monitor: could not start GPU binary: fork/exec /Users/lawrencebinding/miniconda3/envs/ML/lib/python3.9/site-packages/wandb/bin/gpu_stats: bad CPU type in executable"}
+{"time":"2025-06-20T14:30:17.029049+01:00","level":"INFO","msg":"created new stream","id":"1uvmj4pi"}
+{"time":"2025-06-20T14:30:17.029112+01:00","level":"INFO","msg":"stream: started","id":"1uvmj4pi"}
+{"time":"2025-06-20T14:30:17.029345+01:00","level":"INFO","msg":"handler: started","stream_id":"1uvmj4pi"}
+{"time":"2025-06-20T14:30:17.029447+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"1uvmj4pi"}
+{"time":"2025-06-20T14:30:17.029479+01:00","level":"INFO","msg":"sender: started","stream_id":"1uvmj4pi"}
+{"time":"2025-06-20T14:30:17.284723+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-20T14:30:36.041006+01:00","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-06-20T14:30:36.440942+01:00","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-06-20T14:30:42.074368+01:00","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-06-20T14:30:42.121016+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-06-20T14:30:42.121175+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-06-20T14:30:42.888579+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-06-20T14:30:43.084974+01:00","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2025-06-20T14:30:43.091488+01:00","level":"INFO","msg":"stream: closing","id":"1uvmj4pi"}
+{"time":"2025-06-20T14:30:43.091519+01:00","level":"INFO","msg":"handler: closed","stream_id":"1uvmj4pi"}
+{"time":"2025-06-20T14:30:43.091536+01:00","level":"INFO","msg":"sender: closed","stream_id":"1uvmj4pi"}
+{"time":"2025-06-20T14:30:43.091534+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"1uvmj4pi"}
+{"time":"2025-06-20T14:30:43.091817+01:00","level":"INFO","msg":"stream: closed","id":"1uvmj4pi"}

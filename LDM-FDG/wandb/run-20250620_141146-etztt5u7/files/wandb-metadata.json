@@ -1,0 +1,35 @@
+{
+  "os": "macOS-14.1-x86_64-i386-64bit",
+  "python": "CPython 3.9.18",
+  "startedAt": "2025-06-20T13:11:46.088230Z",
+  "program": "/Users/lawrencebinding/Desktop/projects/github/LDM-FDG/LDM-FDG/Main.py",
+  "codePath": "LDM-FDG/Main.py",
+  "git": {
+    "remote": "https://github.com/lbinding/LDM-FDG.git",
+    "commit": "63ed00ca943a936fcdebc8dcee351b525214e77f"
+  },
+  "email": "lawrence.binding@outlook.com",
+  "root": "/Users/lawrencebinding/Desktop/projects/github/LDM-FDG/LDM-FDG",
+  "host": "Lawrences-MacBook-Pro.local",
+  "executable": "/Users/lawrencebinding/miniconda3/envs/ML/bin/python",
+  "codePathLocal": "Main.py",
+  "cpu_count": 6,
+  "cpu_count_logical": 12,
+  "disk": {
+    "/": {
+      "total": "909999996928",
+      "used": "848215588864"
+    },
+    "/System/Volumes/Data": {
+      "total": "909999996928",
+      "used": "848215588864"
+    }
+  },
+  "memory": {
+    "total": "34359738368"
+  },
+  "cpu": {
+    "count": 6,
+    "countLogical": 12
+  }
+}

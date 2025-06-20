@@ -48,36 +48,53 @@ def load_discriminator(device):
 
 #%% Generator loss function
 def generator_loss(gen_images, real_images, z_mu, z_sigma, disc_net, loss_perceptual, device):
-    
-    with autocast(device_type=device, enabled=True):
-
+    with autocast(device_type=device.type, enabled=True):
+ 
         recons_loss = intensity_loss(gen_images, real_images)
-        wandb.log({"intensity loss": recons_loss})
-
+        wandb.log({"intensity loss": recons_loss}) # Consider logging epoch averages instead
+ 
         kl = compute_kl_loss(z_mu, z_sigma)
         wandb.log({"kl loss": kl})
-
+ 
         p_loss = loss_perceptual(gen_images, real_images)
         wandb.log({"perceptual loss": p_loss})
-
+ 
         # Base generator loss (reconstruction + KL + perceptual)
         loss_g = recons_loss + kl_weight * kl + perceptual_weight * p_loss
         wandb.log({"gen base loss": loss_g})
-
+ 
         # Adversarial component
         logits_fake = disc_net(gen_images)[-1]
         gen_adv_loss = adv_loss(logits_fake, target_is_real=True, for_discriminator=False)
         wandb.log({"adversarial loss": gen_adv_loss})
-
-        loss_g += adv_weight * gen_adv_loss
+ 
+        # --- FIX 1: Replaced in-place += with standard addition to fix the error ---
+        loss_g = loss_g + adv_weight * gen_adv_loss
+        # -------------------------------------------------------------------------
         wandb.log({"total generator loss": loss_g})
-
-
-        d_loss_fake = adv_loss(logits_fake, target_is_real=False, for_discriminator=True)
+ 
+ 
+        # --- FIX 2 (Best Practice): Detach logits_fake for the discriminator's loss calculation ---
+        # This stops gradients from flowing back to the generator during the discriminator's update.
+        d_loss_fake = adv_loss(logits_fake.detach(), target_is_real=False, for_discriminator=True)
+        # ------------------------------------------------------------------------------------------
         logits_real = disc_net(real_images.contiguous().detach())[-1]
         d_loss_real = adv_loss(logits_real, target_is_real=True, for_discriminator=True)
         discriminator_loss = (d_loss_fake + d_loss_real) * 0.5
         loss_d = adv_weight * discriminator_loss
-
-
+        wandb.log({"discriminator loss": loss_d})
+ 
+ 
     return loss_g, loss_d
+#def discriminator_loss(gen_images, real_images, disc_net):
+#    logits_fake = disc_net(gen_images)[-1]
+#    d_loss_fake = adv_loss(logits_fake, target_is_real=False, for_discriminator=True)
+#    logits_real = disc_net(real_images.contiguous().detach())[-1]
+#    d_loss_real = adv_loss(logits_real, target_is_real=True, for_discriminator=True)
+#    discriminator_loss = (d_loss_fake + d_loss_real) * 0.5
+#    loss_d = adv_weight * discriminator_loss
+#
+#    return loss_d
+
+
+

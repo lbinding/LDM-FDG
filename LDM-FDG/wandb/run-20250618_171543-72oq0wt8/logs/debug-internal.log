@@ -1,0 +1,76 @@
+{"time":"2025-06-18T17:15:43.967568+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/Users/lawrencebinding/Desktop/projects/github/LDM-FDG/LDM-FDG/wandb/run-20250618_171543-72oq0wt8/logs/debug-core.log"}
+{"time":"2025-06-18T17:15:43.983298+01:00","level":"ERROR","msg":"monitor: failed to initialize GPU asset: monitor: could not start GPU binary: fork/exec /Users/lawrencebinding/miniconda3/envs/ML/lib/python3.9/site-packages/wandb/bin/gpu_stats: bad CPU type in executable"}
+{"time":"2025-06-18T17:15:44.133284+01:00","level":"INFO","msg":"created new stream","id":"72oq0wt8"}
+{"time":"2025-06-18T17:15:44.133333+01:00","level":"INFO","msg":"stream: started","id":"72oq0wt8"}
+{"time":"2025-06-18T17:15:44.133358+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"72oq0wt8"}
+{"time":"2025-06-18T17:15:44.133378+01:00","level":"INFO","msg":"handler: started","stream_id":"72oq0wt8"}
+{"time":"2025-06-18T17:15:44.133391+01:00","level":"INFO","msg":"sender: started","stream_id":"72oq0wt8"}
+{"time":"2025-06-18T17:15:44.386906+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-18T17:16:15.282053+01:00","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-06-18T17:16:15.28418+01:00","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-06-18T17:16:51.096104+01:00","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-06-18T17:16:52.280003+01:00","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-06-18T17:17:11.45792+01:00","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-06-18T17:17:12.594413+01:00","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-06-18T17:18:20.990002+01:00","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-06-18T17:18:28.553159+01:00","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-06-18T17:18:34.275268+01:00","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-06-18T17:18:34.282416+01:00","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-06-18T17:18:34.310348+01:00","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-06-18T17:18:34.317286+01:00","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-06-18T17:18:34.489133+01:00","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-06-18T17:18:34.492947+01:00","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-06-18T17:18:44.888929+01:00","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-06-18T17:18:44.89313+01:00","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-06-18T17:18:44.911782+01:00","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-06-18T17:18:44.917818+01:00","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-06-18T17:18:45.153799+01:00","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-06-18T17:18:45.159727+01:00","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-06-18T17:18:45.266074+01:00","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-06-18T17:18:45.271407+01:00","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-06-18T17:18:45.435715+01:00","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-06-18T17:18:45.442193+01:00","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-06-18T17:18:45.466631+01:00","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-06-18T17:18:45.49386+01:00","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-06-18T17:18:48.05541+01:00","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-06-18T17:18:48.069601+01:00","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-06-18T17:19:03.000198+01:00","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-06-18T17:19:09.218527+01:00","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-06-18T17:48:41.00284+01:00","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-06-18T17:48:41.018324+01:00","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-06-18T17:51:16.558573+01:00","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-06-18T17:51:24.668564+01:00","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-06-18T17:51:49.371373+01:00","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-06-18T17:51:49.374443+01:00","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-06-18T17:57:14.077332+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/lbinding-ucl/LDM_FDG_vae/72oq0wt8/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-06-18T17:57:16.349825+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/lbinding-ucl/LDM_FDG_vae/72oq0wt8/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-06-18T17:57:20.795928+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/lbinding-ucl/LDM_FDG_vae/72oq0wt8/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-06-18T17:58:06.754723+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/lbinding-ucl/LDM_FDG_vae/72oq0wt8/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-06-18T17:58:08.776256+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/lbinding-ucl/LDM_FDG_vae/72oq0wt8/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-06-18T17:58:12.810299+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/lbinding-ucl/LDM_FDG_vae/72oq0wt8/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-06-18T18:15:38.939435+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/lbinding-ucl/LDM_FDG_vae/72oq0wt8/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-06-18T18:15:39.788585+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 10.97.244.116:55678->35.186.228.49:443: read: can't assign requested address"}
+{"time":"2025-06-18T18:15:42.219764+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-06-18T18:15:46.362911+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-06-18T18:39:57.776649+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-06-18T18:39:58.143828+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/lbinding-ucl/LDM_FDG_vae/72oq0wt8/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-06-18T19:41:09.52161+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 192.168.1.191:60254->35.186.228.49:443: read: connection reset by peer"}
+{"time":"2025-06-18T20:22:15.218091+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 192.168.1.191:64018->35.186.228.49:443: read: connection reset by peer"}
+{"time":"2025-06-18T20:39:53.80664+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 192.168.1.191:49216->35.186.228.49:443: read: connection reset by peer"}
+{"time":"2025-06-18T20:53:26.322603+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 192.168.1.191:49442->35.186.228.49:443: read: connection reset by peer"}
+{"time":"2025-06-18T20:53:43.399245+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 192.168.1.191:49528->35.186.228.49:443: read: connection reset by peer"}
+{"time":"2025-06-18T22:17:52.139627+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 192.168.1.191:49619->35.186.228.49:443: read: connection reset by peer"}
+{"time":"2025-06-18T22:50:28.004914+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 192.168.1.191:49903->35.186.228.49:443: read: connection reset by peer"}
+{"time":"2025-06-18T23:18:52.453435+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 192.168.1.191:50155->35.186.228.49:443: read: connection reset by peer"}
+{"time":"2025-06-19T00:19:56.832102+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 192.168.1.191:50364->35.186.228.49:443: read: connection reset by peer"}
+{"time":"2025-06-19T01:21:32.49774+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 192.168.1.191:50651->35.186.228.49:443: read: connection reset by peer"}
+{"time":"2025-06-19T03:22:29.765946+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 192.168.1.191:50932->35.186.228.49:443: read: connection reset by peer"}
+{"time":"2025-06-19T03:22:44.579096+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 192.168.1.191:51197->35.186.228.49:443: read: connection reset by peer"}
+{"time":"2025-06-19T06:24:54.09697+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 192.168.1.191:51263->35.186.228.49:443: read: connection reset by peer"}
+{"time":"2025-06-19T07:22:02.204193+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 192.168.1.191:51514->35.186.228.49:443: read: connection reset by peer"}
+{"time":"2025-06-19T07:32:10.738836+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 192.168.1.191:51704->35.186.228.49:443: read: connection reset by peer"}
+{"time":"2025-06-19T08:14:13.204238+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/lbinding-ucl/LDM_FDG_vae/72oq0wt8/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-06-19T08:33:07.098681+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 192.168.1.191:52027->35.186.228.49:443: read: connection reset by peer"}
+{"time":"2025-06-19T09:31:17.705044+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/lbinding-ucl/LDM_FDG_vae/72oq0wt8/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-06-19T09:31:20.044224+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/lbinding-ucl/LDM_FDG_vae/72oq0wt8/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-06-19T09:12:39.050017+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 192.168.1.191:52839->35.186.228.49:443: read: connection reset by peer"}

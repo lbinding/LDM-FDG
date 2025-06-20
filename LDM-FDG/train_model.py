@@ -26,16 +26,15 @@ def train_autoencoder(KL_autoencoder, discriminator, perceptual_loss, generator_
         total_d_loss = 0
 
         for data_augmented in train_loader:
-            data_augmented = data_augmented.to(device).squeeze(-1).float()
+            data_augmented = data_augmented.to(device).float()
 
             optimizer_g.zero_grad()
             optimizer_d.zero_grad()
-            with autocast(device_type=device.type, enabled=True):
+            with autocast(device_type='cuda', enabled=True):
                 recon, z_mu, z_sigma = KL_autoencoder(data_augmented)
-
                 gen_loss, disc_loss = generator_loss(recon, data_augmented, z_mu, z_sigma, discriminator, perceptual_loss, device) 
 
-            gen_loss.backward()
+            gen_loss.backward(retain_graph=True)
             optimizer_g.step()
 
             disc_loss.backward()
@@ -48,8 +47,8 @@ def train_autoencoder(KL_autoencoder, discriminator, perceptual_loss, generator_
         valid_loss = 0
         with torch.no_grad():
             for data in val_loader:
-                with autocast(device_type=device, enabled=True):
-                    data = data.to(device).squeeze(-1).float()
+                with autocast(device_type='cuda', enabled=True):
+                    data = data.to(device).float()
                     recon, _, _ = KL_autoencoder(data)
 
                     recon_loss = intensity_loss(data, recon)
@@ -89,7 +88,7 @@ def train_LDM(LDM_model, vAE_model, inferer, scheduler, optimizer, lr_scheduler,
         wandb.log({"epoch": epoch})
         total_loss = 0
         for data_raw in data_loader:
-            data_raw = data_raw.to(device).squeeze(-1).float()
+            data_raw = data_raw.to(device).float()
             '''
             Commented out the below as this is for use with diffusion not the LDM inferer 
             '''

@@ -1,0 +1,9 @@
+Splitting data into training, validation, and test sets...
+Found 4014 total files.
+Training set size: 3211
+Validation set size: 401
+Test set size: 402
+Iterating through the train_loader...
+/Users/lawrencebinding/miniconda3/envs/ML/lib/python3.9/site-packages/torchio/transforms/augmentation/spatial/random_elastic_deformation.py:301: RuntimeWarning: The maximum displacement is larger than the coarse grid spacing for dimensions: [2], so folding may occur. Choose fewer control points or a smaller maximum displacement
+  self.parse_free_form_transform(
+Plotting augmented data...
