@@ -7,32 +7,65 @@ from torch.nn import MSELoss
 from monai.transforms import DivisiblePad
 import os
 from torchvision.utils import save_image
+from torch.amp import autocast
 
+import numpy as np
+
+intensity_loss = torch.nn.L1Loss()
 #%% Train vAE 
-def train_autoencoder(KL_autoencoder, discriminator, perceptual_loss, generator_loss, optimizer, data_loader, output_dir, device):
+def train_autoencoder(KL_autoencoder, discriminator, perceptual_loss, generator_loss, optimizer_g, optimizer_d, train_loader, val_loader, output_dir, device):
+    
     wandb_config = load_wandb_config_vAE()
     KL_autoencoder.train()
+
+    best_loss = np.inf
+
     for epoch in range(wandb_config["epochs"]):
         wandb.log({"epoch": epoch})
-        total_loss = 0
-        for data_augmented in data_loader:
+        total_g_loss = 0
+        total_d_loss = 0
+
+        for data_augmented in train_loader:
             data_augmented = data_augmented.to(device).squeeze(-1).float()
 
-            optimizer.zero_grad()
-            recon, z_mu, z_sigma = KL_autoencoder(data_augmented)
+            optimizer_g.zero_grad()
+            optimizer_d.zero_grad()
+            with autocast(device_type=device.type, enabled=True):
+                recon, z_mu, z_sigma = KL_autoencoder(data_augmented)
 
-            gen_loss = generator_loss(recon, data_augmented, z_mu, z_sigma, discriminator, perceptual_loss) 
+                gen_loss, disc_loss = generator_loss(recon, data_augmented, z_mu, z_sigma, discriminator, perceptual_loss, device) 
 
             gen_loss.backward()
-            optimizer.step()
+            optimizer_g.step()
 
-            total_loss += gen_loss.item()
+            disc_loss.backward()
+            optimizer_d.step()    
+
+            total_g_loss += gen_loss.item()
+            total_d_loss += disc_loss.item()
         # Save model every epoch
-        if epoch % 5 == 0:
+
+        valid_loss = 0
+        with torch.no_grad():
+            for data in val_loader:
+                with autocast(device_type=device, enabled=True):
+                    data = data.to(device).squeeze(-1).float()
+                    recon, _, _ = KL_autoencoder(data)
+
+                    recon_loss = intensity_loss(data, recon)
+
+                    valid_loss += recon_loss.item() # Accumulates only the Python number
+        
+        epoch_valid_loss = valid_loss / len(val_loader)
+        wandb.log({'valid_loss': epoch_valid_loss})
+
+        if epoch_valid_loss < best_loss:
+            best_loss = epoch_valid_loss
+
             save_model(vAE=KL_autoencoder, model_dir=output_dir, epoch=epoch)
             save_model(discrim=discriminator, model_dir=output_dir, epoch=epoch)
-        
-        print(f"Epoch {epoch+1}/{wandb_config['epochs']}, Loss: {total_loss/len(data_loader):.4f}")
+                       
+
     return KL_autoencoder
 
 

@@ -13,8 +13,8 @@ def load_wandb_config_vAE():
         "learning_rate": 0.00005,
         "architecture": "Autoencoder_KL",
         "dataset": "FDG_2D_slices",
-        "epochs": 500,
-        "batch_size": 5,
+        "epochs": 100,
+        "batch_size": 8,
         }
 
     wandb.init(

@@ -5,6 +5,7 @@ import wandb
 from monai.bundle import ConfigParser
 from monai.losses import PerceptualLoss
 from monai.losses.adversarial_loss import PatchAdversarialLoss
+from torch.amp import autocast
 
 #%% Paths and Config
 base_dir = Path(__file__).parent.resolve()
@@ -46,26 +47,37 @@ def load_discriminator(device):
     return discriminator
 
 #%% Generator loss function
-def generator_loss(gen_images, real_images, z_mu, z_sigma, disc_net, loss_perceptual):
-    recons_loss = intensity_loss(gen_images, real_images)
-    wandb.log({"intensity loss": recons_loss})
+def generator_loss(gen_images, real_images, z_mu, z_sigma, disc_net, loss_perceptual, device):
+    
+    with autocast(device_type=device, enabled=True):
 
-    kl = compute_kl_loss(z_mu, z_sigma)
-    wandb.log({"kl loss": kl})
+        recons_loss = intensity_loss(gen_images, real_images)
+        wandb.log({"intensity loss": recons_loss})
 
-    p_loss = loss_perceptual(gen_images, real_images)
-    wandb.log({"perceptual loss": p_loss})
+        kl = compute_kl_loss(z_mu, z_sigma)
+        wandb.log({"kl loss": kl})
 
-    # Base generator loss (reconstruction + KL + perceptual)
-    loss_g = recons_loss + kl_weight * kl + perceptual_weight * p_loss
-    wandb.log({"gen base loss": loss_g})
+        p_loss = loss_perceptual(gen_images, real_images)
+        wandb.log({"perceptual loss": p_loss})
 
-    # Adversarial component
-    logits_fake = disc_net(gen_images)[-1]
-    gen_adv_loss = adv_loss(logits_fake, target_is_real=True, for_discriminator=False)
-    wandb.log({"adversarial loss": gen_adv_loss})
+        # Base generator loss (reconstruction + KL + perceptual)
+        loss_g = recons_loss + kl_weight * kl + perceptual_weight * p_loss
+        wandb.log({"gen base loss": loss_g})
 
-    loss_g += adv_weight * gen_adv_loss
-    wandb.log({"total generator loss": loss_g})
+        # Adversarial component
+        logits_fake = disc_net(gen_images)[-1]
+        gen_adv_loss = adv_loss(logits_fake, target_is_real=True, for_discriminator=False)
+        wandb.log({"adversarial loss": gen_adv_loss})
 
-    return loss_g
+        loss_g += adv_weight * gen_adv_loss
+        wandb.log({"total generator loss": loss_g})
+
+
+        d_loss_fake = adv_loss(logits_fake, target_is_real=False, for_discriminator=True)
+        logits_real = disc_net(real_images.contiguous().detach())[-1]
+        d_loss_real = adv_loss(logits_real, target_is_real=True, for_discriminator=True)
+        discriminator_loss = (d_loss_fake + d_loss_real) * 0.5
+        loss_d = adv_weight * discriminator_loss
+
+
+    return loss_g, loss_d
